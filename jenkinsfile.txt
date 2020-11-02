@@ -25,7 +25,7 @@ pipeline {
         stage('3-Deploy') {
             steps {
                 echo "Start of Stage Deploy..."
-                echo "Deploying....."
+                echo "Deploying..."
                 sh "ls -la"
                 sh '''
                    echo "Line1"
