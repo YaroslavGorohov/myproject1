@@ -1,6 +1,8 @@
 # This is jenkins auto build
 
 name: jenkins-action
+env:
+  key:  
 on:
   push:
     branches: [ production ]
