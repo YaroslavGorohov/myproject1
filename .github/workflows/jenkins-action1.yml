@@ -14,5 +14,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: start build jenkins
-        run : curl https://yaroslavgorohov:jenkins-token@jenkins-appserver.onlyoffice.com/job/web-server/build?token=qwSSDFWD12SDFD34dfGDSRRGRDX67zedev
+        run : curl https://yaroslavgorohov:${{ secrets.JENKINS_TOKEN }}@jenkins-appserver.onlyoffice.com/job/web-server/build?token=qwSSDFWD12SDFD34dfGDSRRGRDX67zedev
 
