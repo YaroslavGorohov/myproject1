@@ -6,11 +6,11 @@ on:
     branches: [ production ]
   pull_request:
     branches: [ production ]
-   if: github.event.pull_request.merged == true
+#   if: github.event.pull_request.merged == true
 
 jobs:
   jenkins_build:
-#    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: start build jenkins
