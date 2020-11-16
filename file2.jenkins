@@ -3,7 +3,7 @@ pipeline {
     githubPush()
   }
   agent {
-    label 'ubuntu'
+    label 'net-core'
   }
   options {
     disableConcurrentBuilds()
