@@ -5,7 +5,7 @@ pipeline {
           githubPush
                     }
           agent   {
-                  label 'ubuntu'
+                  label 'master'
                   }
           options {
                   buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
