@@ -8,7 +8,8 @@ pipeline {
           options {
                   buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
                   timestamps()
-          stagea {
+		  }
+          stages {
             stage("First step") {
             steps {
             sh 'hostname'
