@@ -1,6 +1,9 @@
 #!groovy
 properties ([disableConcurrentBuilds()])
 pipeline {
+	  triggers {
+          githubPush
+                    }
           agent   {
                   label 'ubuntu'
                   }
