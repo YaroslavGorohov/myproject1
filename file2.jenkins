@@ -1,7 +1,5 @@
 pipeline {
-  triggers {
-    githubPush()
-  }
+
   agent {
     label 'ubuntu'
   }
