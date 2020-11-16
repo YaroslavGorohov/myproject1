@@ -4,15 +4,16 @@ pipeline {
           agent   {
                   label 'master'
                   }
+	  triggers {
+          githubPush
+  }
           options {
                   buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
                   timestamps()
           stagea {
             stage("First step") {
             steps {
-            sh 'hostname'
-	    sh 'pwd'	
-		    sh 'echo "23323"'
+            nslookup
             }
         }
     }
