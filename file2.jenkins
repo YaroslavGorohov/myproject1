@@ -1,22 +1,21 @@
 pipeline {
-	  triggers {
-          githubPush
-                    }
-          agent   {
-                  label 'master'
-                  }
-          options {
-                  buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-                  timestamps()
-		  }
-          stages {
-            stage("First step") {
-            steps {
-            sh 'hostname'
-	    sh 'pwd'	
-	    nslookup
-            }
-        }
+  triggers {
+    githubPush()
+  }
+  agent {
+    label 'master'
+  }
+  options {
+    disableConcurrentBuilds()
+    buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    timestamps()
+  }
+  stages {
+    stage("First step") {
+      steps {
+        sh 'hostname'
+        sh 'pwd'
+      }
     }
- }
-              
+  }
+}         
