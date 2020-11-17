@@ -10,9 +10,9 @@ pipeline {
     buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
   }
   stages {
-  agent {
-    label 'net-core'
-  }
+    agent {
+     label 'net-core'
+          }
     stage("First step") {
       steps {
         sh 'hostname'
