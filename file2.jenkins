@@ -10,7 +10,10 @@ pipeline {
     buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
   }
   stages {
-    stage("First step") {
+  stage("First step") {
+      agent {
+        label 'master'
+      }
       steps {
         sh 'hostname'
         sh 'pwd'
