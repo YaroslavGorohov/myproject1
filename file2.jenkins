@@ -11,10 +11,12 @@ pipeline {
     timestamps()
   }
   stages {
-    stage("First step") {
-      steps {
-        hostname
-        
+         stage('Linux') {
+					    agent { label 'net-core' }
+					      steps {
+                sh 'hostname'
+                sh 'pwd'
+         
       }
     }
   }
