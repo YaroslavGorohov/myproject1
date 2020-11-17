@@ -2,19 +2,20 @@ pipeline {
   triggers {
     githubPush()
   }
+  agent {
+    label 'master'
+  }
   options {
     disableConcurrentBuilds()
     buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    timestamps()
   }
   stages {
     stage("First step") {
-      agent {
-        label 'master'
-      }
       steps {
         sh 'hostname'
         sh 'pwd'
       }
     }
   }
-}         
+} 
