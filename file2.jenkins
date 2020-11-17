@@ -3,21 +3,19 @@ pipeline {
     githubPush()
   }
   agent {
-    label 'net-core'
+    label 'master'
   }
   options {
     disableConcurrentBuilds()
     buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+    timestamps()
   }
   stages {
-  stage("First step") {
-      agent {
-        label 'net-core'
-      }
+    stage("First step") {
       steps {
-        sh 'hostname'
-        sh 'pwd'
+        hostname
+        
       }
     }
   }
-} 
+}
