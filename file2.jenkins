@@ -12,7 +12,7 @@ pipeline {
   stages {
   stage("First step") {
       agent {
-        label 'master'
+        label 'net-core'
       }
       steps {
         sh 'hostname'
