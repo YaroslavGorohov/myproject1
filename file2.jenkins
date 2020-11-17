@@ -9,10 +9,9 @@ pipeline {
   stages {
          stage('Linux') {
 		agent { label 'net-core' }
-			steps {
+		steps {
                 sh 'hostname'
                 sh 'pwd'
-         
       }
     }
   }
