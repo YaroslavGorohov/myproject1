@@ -11,8 +11,8 @@ pipeline {
          stage('Linux') {
 		
 		steps {
-                sh 'hostname'
-                sh 'pwd'
+                echo 'hostname'
+                echo 'pwd'
       }
     }
   }
