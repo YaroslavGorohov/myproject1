@@ -13,6 +13,11 @@ pipeline {
           stagea {
             stage("First step") {
             steps {
+
+            sh 'hostname'
+	    sh 'pwd'	
+		    sh 'echo "23"'
+=======
             nslookup
             }
         }
