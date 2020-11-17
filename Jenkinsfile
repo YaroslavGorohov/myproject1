@@ -15,6 +15,7 @@ pipeline {
       steps {
         sh 'hostname'
         sh 'pwd'
+        sh 'uname -a'
       }
     }
   }
