@@ -8,12 +8,11 @@ pipeline {
   options {
     disableConcurrentBuilds()
     buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-    timestamps()
-  }
+     }
   stages {
          stage('Linux') {
-					    agent { label 'net-core' }
-					      steps {
+		agent { label 'net-core' }
+			steps {
                 sh 'hostname'
                 sh 'pwd'
          
