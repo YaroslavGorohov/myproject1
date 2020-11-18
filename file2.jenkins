@@ -16,9 +16,7 @@ pipeline {
 
             sh 'hostname'
 	    sh 'pwd'	
-		    sh 'echo "23"'
-=======
-            nslookup
+		    echo "123"
             }
         }
     }
