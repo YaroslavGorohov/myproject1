@@ -1,11 +1,19 @@
 pipeline {
-  agent net-core
+  agent {
+    label 'net-core'
+  }
+  options {
+    disableConcurrentBuilds()
+    buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+  }
   stages {
-    stage('test1') {
+    stage("First step") {
       steps {
-        echo 'test'
+        sh 'hostname'
+        sh 'pwd'
+        sh 'uname -a'
+        sh 'echo "123"'
       }
     }
-
   }
-}
+}    
