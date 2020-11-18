@@ -1,19 +1,19 @@
-#!groovy
-properties ([disableConcurrentBuilds()])
 pipeline {
-          agent   {
-                  label 'master'
-                  }
-          options {
-                  buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
-                  timestamps()
-          stagea {
-            stage("First step") {
-            steps {
-            sh 'hostname'
-	    sh 'pwd'	
-            }
-        }
+ agent { label 'master' }
+  triggers {
+    githubPush()
+  }
+    options {
+    disableConcurrentBuilds()
+    buildDiscarder (logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+     }
+  stages {
+         stage('Linux') {
+		
+		steps {
+                echo 'hostname22'
+                echo 'pwd'
+      }
     }
- }
-              
+  }
+}
