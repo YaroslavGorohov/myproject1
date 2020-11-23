@@ -16,7 +16,7 @@ pipeline {
 
             sh 'hostname'
 	    sh 'pwd'	
-		    echo "1234"
+		    echo "1231234"
             }
         }
     }
