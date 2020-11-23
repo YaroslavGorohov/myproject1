@@ -12,7 +12,7 @@ pipeline {
             steps {
             sh 'hostname'
 	    sh 'pwd'	
-		    sh 'echo "28323"'
+		    sh 'echo "283"'
             }
         }
     }
