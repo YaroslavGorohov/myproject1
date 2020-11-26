@@ -16,7 +16,7 @@ pipeline {
         sh 'hostname'
         sh 'pwd'
         sh 'uname -a'
-        sh 'echo "126"'
+        sh 'echo "16"'
       }
     }
   }
