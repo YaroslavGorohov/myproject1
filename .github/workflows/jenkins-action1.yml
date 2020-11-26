@@ -1,20 +1,16 @@
 # This is jenkins auto build
 
 name: jenkins-action
-env:
-  key:  
 on:
   push:
-    branches: [ production ]
+    branches: [ master ]
   pull_request:
-    branches: [ production ]
-   # if: github.event.pull_request.merged == true
+    branches: [ master ]
 
 jobs:
   jenkins_build:
-#    if: github.event.pull_request.merged == true
+ ##   if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: start build jenkins
-        run : echo "hello World"
-
+        run : curl https://yaroslav_gorohov:${{ secrets.JENKINS_TOKEN2 }}@buildserver.onlyoffice.com/job/test_build2build?token=qwSSDFWD12SDFD34dfGDSRRGRDX67zed
